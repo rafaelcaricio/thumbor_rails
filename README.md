@@ -46,3 +46,29 @@ Of course, you can pass various parameters to thumbor as described in the [ruby-
 ```ruby
 <%= thumbor_url "http://example.com/awesome_image.jpg", width: 200, height: 300 %>
 ```
+
+### thumbor_image_tag
+
+The `thumbor_image_tag` helper allows you to simplify the usage when creating a simple image tag in your views. It returns a complete image tag with the generated thumbor url in the `src` attribute of the `img` tag. Example:
+
+```ruby
+<%= thumbor_image_tag "http://myimage.jpg", unsafe: true, width: 100, height: 100 %>
+```
+
+Will result in something like:
+
+```html
+<img alt="Myimage" src="http://thumbor.example.com/unsafe/100x100/http://myimage.jpg" />
+```
+
+## Maintainers
+
+- Rafael Caricio (@rafaelcaricio)[https://coderwall.com/rafaelcaricio]
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
