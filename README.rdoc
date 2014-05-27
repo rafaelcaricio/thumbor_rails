@@ -1,0 +1,7 @@
+= Thumbor Rails
+
+https://github.com/rafaelcaricio/thumbor_rails
+
+== DESCRIPTION
+
+thumbor_rails is a client to make easier to use the thumbor imaging service (http://github.com/globocom/thumbor) in Ruby and Rails projects.
