@@ -63,7 +63,7 @@ Will result in something like:
 
 ## Maintainers
 
-- Rafael Caricio (@rafaelcaricio)[https://coderwall.com/rafaelcaricio]
+- Rafael Caricio ([@rafaelcaricio](https://coderwall.com/rafaelcaricio))
 
 ## Contributing
 
@@ -72,3 +72,7 @@ Will result in something like:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Extras
+
+If you do not have yet an instance of thumbor for you. You can get one for [free up and running](https://github.com/rafaelcaricio/thumbor-openshift-example) in the OpenShift Cloud.
