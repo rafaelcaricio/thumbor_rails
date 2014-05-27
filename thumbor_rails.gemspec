@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.authors = ["Rafael Caricio"]
   s.description = "thumbor_rails is a client for the thumbor imaging service (http://github.com/globocom/thumbor) for Ruby and Rails projects."
   s.email = ["rafael@caricio.com"]
-  s.files =  Dir.glob('lib/**/*.rb') << 'README.rdoc'
+  s.files =  Dir.glob('lib/**/*.rb') << 'README.md'
   s.test_files = Dir.glob('spec/**/*.rb')
   s.homepage = "https://github.com/rafaelcaricio/thumbor_rails"
-  s.rdoc_options = ["--main", "README.rdoc"]
+  s.rdoc_options = ["--main", "README.md"]
   s.summary = "thumbor_rails is a client to manage and generate urls for the thumbor imaging service (http://github.com/globocom/thumbor) for Ruby and Rails projects."
   s.license = "MIT"
 
