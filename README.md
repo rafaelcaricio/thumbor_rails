@@ -20,10 +20,12 @@ Now generate the thumbor basic client configuration:
 rails g thumbor_rails:install
 ```
 
-It will generate the basic configuration in `config/initializers/thumbor_rails.rb` and you have to update the values of `server_url` to point to your thumbor server and the `security_key` to have your security key.
-If `server_url` contains `%d`, it will be interpolated to 0-3, [just like `asset_host` for Rails](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetUrlHelper.html).
+It will generate the basic configuration in `config/initializers/thumbor_rails.rb`, which has the following configuration options available:
 
-That's all.
+- `server_url`. _Required_. The location of your Thumbor server. If `server_url` contains `%d`, it will be interpolated to 0-3, [just like `asset_host` for Rails](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetUrlHelper.html).
+- `sercurity_key`. Optional. This must match your [Thumbor server's security key](https://github.com/thumbor/thumbor/wiki/Security#stopping-tampering).
+- `force_no_protocol_in_source_url`. Optional, defaults to `false`. If true, the protocol is removed from any image source passed into `thumbor_url`. This may be done for aesthetic reasons, or due to certain CDN/server configurations.
+
 
 ## Usage
 

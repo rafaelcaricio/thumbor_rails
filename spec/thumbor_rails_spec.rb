@@ -15,6 +15,10 @@ describe ThumborRails do
     expect(subject).to respond_to 'server_url'
   end
 
+  it 'has force_no_protocol_in_source_url attibute' do
+    expect(subject).to respond_to 'force_no_protocol_in_source_url'
+  end
+
   describe 'when configured' do
     before do
       subject.setup do |config|
