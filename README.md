@@ -66,6 +66,8 @@ Will result in something like:
 
 - Rafael Caricio ([@rafaelcaricio](https://coderwall.com/rafaelcaricio))
 
+and [contributors](https://github.com/rafaelcaricio/thumbor_rails/graphs/contributors).
+
 ## Contributing
 
 1. Fork it
