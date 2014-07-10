@@ -15,6 +15,16 @@ describe ThumborRails::Helpers do
     it 'should pass arguments to thumbor' do
       expect(thumbor_url('http://test.img', unsafe: true, width: 100, height: 200)).to eq('http://thumbor.example.com/unsafe/100x200/http://test.img')
     end
+
+    it 'should interpolate thumbor hosts with %d to 0-3, like Rails asset_host' do
+      original_url = ThumborRails.server_url
+      begin
+        ThumborRails.server_url = "http://thumbor%d.com"
+        expect(thumbor_url('http://test.img')).to eq('http://thumbor3.com/yPVDsGJsQKjKky_cdbkNuIpc9-A=/http://test.img')
+      ensure
+        ThumborRails.server_url = original_url
+      end
+    end
   end
 
   describe '#thumbor_image_tag' do

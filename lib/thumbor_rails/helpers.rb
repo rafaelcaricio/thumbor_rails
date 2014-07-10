@@ -8,7 +8,12 @@ module ThumborRails
       options[:image] = image_url
       thumbor_service = crypto_service
       thumbor_service = unsafe_service if options[:unsafe]
-      "#{ThumborRails.server_url}#{thumbor_service.generate(options)}"
+      host = ThumborRails.server_url
+      path = thumbor_service.generate(options)
+      if host =~ /%d/
+        host = host % (Zlib.crc32(path) % 4)
+      end
+      host + path
     end
 
     def thumbor_image_tag(image_url, options = {}, tag_attrs = {})
