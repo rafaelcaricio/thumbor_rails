@@ -21,6 +21,7 @@ rails g thumbor_rails:install
 ```
 
 It will generate the basic configuration in `config/initializers/thumbor_rails.rb` and you have to update the values of `server_url` to point to your thumbor server and the `security_key` to have your security key.
+If `server_url` contains `%d`, it will be interpolated to 0-3, [just like `asset_host` for Rails](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetUrlHelper.html).
 
 That's all.
 
