@@ -25,6 +25,17 @@ describe ThumborRails::Helpers do
         ThumborRails.server_url = original_url
       end
     end
+
+    it 'should automatically remove the protocol in source urls if configured to do so' do
+      begin
+        ThumborRails.force_no_protocol_in_source_url = true
+        expect(thumbor_url('http://test.img', unsafe: true)).to eq('http://thumbor.example.com/unsafe/test.img')
+        expect(thumbor_url('https://test.img', unsafe: true)).to eq('http://thumbor.example.com/unsafe/test.img')
+        expect(thumbor_url('www.test.img', unsafe: true)).to eq('http://thumbor.example.com/unsafe/www.test.img')
+      ensure
+        ThumborRails.force_no_protocol_in_source_url = false
+      end
+    end
   end
 
   describe '#thumbor_image_tag' do
