@@ -11,7 +11,7 @@ thumbor_rails is a client to make easier to use the thumbor imaging service (htt
 You can use this gem by putting the following inside your Gemfile:
 
 ```
-gem "thumbor_rails", "0.1.0"
+gem "thumbor_rails", "0.1.2"
 ```
 
 Now generate the thumbor basic client configuration:
