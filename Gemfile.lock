@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    thumbor_rails (1.0.1)
+    thumbor_rails (1.1.0)
       ruby-thumbor (>= 1.2.1)
 
 GEM
