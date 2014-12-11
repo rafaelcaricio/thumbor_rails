@@ -6,7 +6,7 @@ module ThumborRails
 
     def thumbor_url(image_url, options = {})
       if ThumborRails.force_no_protocol_in_source_url
-        image_url.sub!(/^http(s|):\/\//, '')
+        image_url = image_url.sub(/^http(s|):\/\//, '')
       end
 
       options[:image] = image_url
