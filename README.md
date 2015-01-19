@@ -1,4 +1,4 @@
-# Thumbor Rails [<img src="https://secure.travis-ci.org/rafaelcaricio/thumbor_rails.png?branch=master" alt="Build Status" />](https://travis-ci.org/rafaelcaricio/thumbor_rails)
+# Thumbor Rails [<img src="https://secure.travis-ci.org/rafaelcaricio/thumbor_rails.svg?branch=master" alt="Build Status" />](https://travis-ci.org/rafaelcaricio/thumbor_rails)
 
 https://github.com/rafaelcaricio/thumbor_rails
 
