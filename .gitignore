@@ -24,3 +24,4 @@ config/secrets.yml
 .rvmrc
 *.gem
 Gemfile.lock
+*.gemfile.lock
