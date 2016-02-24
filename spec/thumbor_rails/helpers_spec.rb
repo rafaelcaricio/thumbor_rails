@@ -66,12 +66,18 @@ describe ThumborRails::Helpers do
     subject { thumbor_image_tag('http://myimg.jpg', params) }
 
     context 'unsafe disabled' do
-      it { should eq('<img alt="Myimg" src="http://thumbor.example.com/Q-1lWnxlCLnkzXWWM5xTAs1QEBM=/http://myimg.jpg" />') }
+      it {
+        should include('src="http://thumbor.example.com/Q-1lWnxlCLnkzXWWM5xTAs1QEBM=/http://myimg.jpg"')
+        should include('alt="Myimg"')
+      }
     end
 
     context 'unsafe enabled' do
       let(:params) { { unsafe: true } }
-      it { should eq('<img alt="Myimg" src="http://thumbor.example.com/unsafe/http://myimg.jpg" />') }
+      it {
+        should include('src="http://thumbor.example.com/unsafe/http://myimg.jpg"')
+        should include('alt="Myimg"')
+      }
     end
   end
 end

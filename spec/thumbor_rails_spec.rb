@@ -22,12 +22,12 @@ describe ThumborRails do
   describe 'when configured' do
     before do
       subject.setup do |config|
-        config.server_url = 'http://thumbor.globo.com'
+        config.server_url = 'http://thumbor.example.com'
       end
     end
 
     it 'should use the configuration' do
-      expect(subject.server_url).to eq('http://thumbor.globo.com')
+      expect(subject.server_url).to eq('http://thumbor.example.com')
     end
   end
 end
