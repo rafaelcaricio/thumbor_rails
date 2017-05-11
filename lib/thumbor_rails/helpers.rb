@@ -8,8 +8,8 @@ module ThumborRails
       if ThumborRails.force_no_protocol_in_source_url
         image_url = image_url.sub(/^http(s|):\/\//, '')
       end
-
-      options[:image] = image_url
+     
+      options[:image] = ERB::Util.url_encode(image_url)
       thumbor_service = crypto_service
       thumbor_service = unsafe_service if options[:unsafe]
       host = ThumborRails.server_url
