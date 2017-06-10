@@ -25,6 +25,7 @@ module ThumborRails
     end
 
     def thumbor_image_tag(image_url, options = {}, tag_attrs = {})
+      tag_attrs[:alt] ||= image_alt(image_url)
       image_tag(thumbor_url(image_url, options), tag_attrs)
     end
 
