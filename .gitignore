@@ -25,3 +25,4 @@ config/secrets.yml
 *.gem
 Gemfile.lock
 *.gemfile.lock
+gemfiles/.bundle/
