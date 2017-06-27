@@ -8,7 +8,11 @@ module ThumborRails
       if ThumborRails.force_no_protocol_in_source_url
         image_url = image_url.sub(/^http(s|):\/\//, '')
       end
-
+      
+      unless options[:unsafe]
+        image_url = ERB::Util.url_encode(image_url)
+      end
+      
       options[:image] = image_url
       thumbor_service = crypto_service
       thumbor_service = unsafe_service if options[:unsafe]
@@ -21,6 +25,7 @@ module ThumborRails
     end
 
     def thumbor_image_tag(image_url, options = {}, tag_attrs = {})
+      tag_attrs[:alt] ||= image_alt(image_url)
       image_tag(thumbor_url(image_url, options), tag_attrs)
     end
 
