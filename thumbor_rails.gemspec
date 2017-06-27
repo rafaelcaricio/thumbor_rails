@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.summary = "thumbor_rails is a client to manage and generate urls for the thumbor imaging service (http://github.com/globocom/thumbor) for Ruby and Rails projects."
   s.license = "MIT"
 
-  s.add_dependency 'ruby-thumbor', '>= 1.2.1'
+  s.add_dependency             'ruby-thumbor', '>= 1.2.1'
 
   s.add_runtime_dependency     'rails', '>= 4.0'
 
