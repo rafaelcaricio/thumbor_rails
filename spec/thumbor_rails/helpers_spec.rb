@@ -17,14 +17,14 @@ describe ThumborRails::Helpers do
     subject { thumbor_url('http://test.img', params) }
 
     context 'enabled' do
-      it { 
+      it {
         should include('http%3A%2F%2Ftest.img')
       }
     end
 
     context 'disabled when unsafe enabled' do
       let(:params) { { unsafe: true } }
-      it { 
+      it {
         should include('http://test.img')
       }
     end
@@ -104,6 +104,20 @@ describe ThumborRails::Helpers do
       it {
         should include('alt="Yourimg"')
       }
-    end    
+    end
+  end
+
+  describe 'ENV["DISABLE_THUMBOR"]' do
+    subject { thumbor_url('http://test.img', params) }
+
+    context 'when set' do
+      before { ENV["DISABLE_THUMBOR"] = 'true' }
+      it { should eq('http://test.img') }
+    end
+
+    context 'when not set' do
+      before { ENV.delete("DISABLE_THUMBOR") }
+      it { should eq('http://thumbor.example.com/su8uxlZzewqybJYZUPALFtZBrhE=/http%3A%2F%2Ftest.img') }
+    end
   end
 end
