@@ -21,7 +21,7 @@ module ThumborRails
       if host =~ /%d/
         host = host % (Zlib.crc32(path) % 4)
       end
-      host + path
+      ENV.has_key?("DISABLE_THUMBOR") ? CGI::unescape(image_url) : (host + path)
     end
 
     def thumbor_image_tag(image_url, options = {}, tag_attrs = {})

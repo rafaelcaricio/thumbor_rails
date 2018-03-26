@@ -64,6 +64,10 @@ Will result in something like:
 <img alt="Myimage" src="http://thumbor.example.com/unsafe/100x100/http://myimage.jpg" />
 ```
 
+### Disabling Thumbor
+
+Setting the `DISABLE_THUMBOR` environment variable will disable `thumbor_image_tag` and `thumbor_url` and they will return the original url instead. This is in case you don't want to use Thumbor locally or want to disable it temporarily.
+
 ## Maintainers
 
 - Rafael Caricio ([@rafaelcaricio](https://coderwall.com/rafaelcaricio))
